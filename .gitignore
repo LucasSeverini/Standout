@@ -22,85 +22,10 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-
-public class Main {
-    public static void main(String[] args) {
-        Main app  = new Main();
-        app.start();
-    }
-
-    private void start() {
-        boolean emExecucao = true;
-        while (emExecucao){
-
-
-            exibirMenu();
-
-            int opcao = obterSelecaoMenu();
-
-            switch (opcao) {
-                case 1:
-                    consultarProduto();
-                    break;
-                case 2:
-                    cadastrarUsuario();
-                    break;
-                case 3:
-                    emExecucao = false;
-                    System.out.println("Obrigado por participar");
-                    break;
-                default:
-                    break;
-            }
-        }
-        System.out.println("Fim");
-    }
-
-    private void consultarProduto() {
-
-        System.out.println("Digite qual produto deseja consultar: ");
-        Scanner scanner = new Scanner(System.in);
-        String nomeDoProduto = scanner.nextLine();
-
-    }
-
-    private void cadastrarUsuario() {
-
-        System.out.println("Digite seu nome completo: ");
-        Scanner scanner = new Scanner(System.in);
-        String nomeDoUsuario = scanner.nextLine();
-
-        System.out.println("Digite seu CPF: ");
-        String emailUsuario = scanner.nextLine();
-
-        System.out.println("Digite seu e-mail: ");
-        String cpfUsuario = scanner.nextLine();
-
-        Cadastro cadastro = new Cadastro();
-        cadastro.getNome(nomeDoUsuario);
-        cadastro.getCpf(cpfUsuario);
-        cadastro.getEmail(emailUsuario);
-
-    }
-
-    private int obterSelecaoMenu(){
-        Scanner scanner = new Scanner(System.in);
-        int opcao= 0;
-        try{
-            opcao = scanner.nextInt();
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-            opcao = 4;
-            scanner.next();
-        }
-        return opcao;
-    }
-
-    private void exibirMenu() {
-        System.out.println("\n----- Projeto Standout ----- \n--- O que deseja realizar ---\n");
-        System.out.println("1. Consultar Produto");
-        System.out.println("2. Cadastrar-se");
-        System.out.println("3. Sair");
-        System.out.println("\nDigite sua opcao: ");
-    }
-}
+# IntelliJ
+out/
+.idea/
+.idea_modules/
+*.iml
+*.ipr
+*.iws
